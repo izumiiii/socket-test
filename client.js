@@ -9,6 +9,8 @@ client.on('data', function(data) {
    client.end();
 });
 
+client.write('data')
+
 client.on('end', function() {
    console.log('disconnected from server');
 });

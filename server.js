@@ -7,6 +7,10 @@ var server = net.createServer(function(connection) {
       console.log('client disconnected');
    });
 
+   connection.on('data', function(data) {
+    console.log('DATA ' + ': ' + data);
+  });
+
    connection.write('Hello World!\r\n');
    connection.pipe(connection);
 });
